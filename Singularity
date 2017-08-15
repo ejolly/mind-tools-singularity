@@ -21,6 +21,11 @@ from: debian:latest
       ffmpeg \
       fonts-liberation
 
+  # Make folders necessary to play nice with Discovery
+  mkdir -p /afs /inbox /ihome /opt /idata /dartfs-hpc/scratch/mind_hackathon
+  chmod a+rX /afs /inbox /ihome /opt /idata
+  chmod a+rX -R /opt /dartfs-hpc
+  
   # Install anaconda
   echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
       wget --quiet https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh -O ~/anaconda.sh && \
