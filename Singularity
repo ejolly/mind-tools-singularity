@@ -1,5 +1,5 @@
-bootstrap: docker
 from: debian:latest
+bootstrap: docker
 
 # Install necessary linux packages from apt-get
 %post
@@ -22,8 +22,8 @@ from: debian:latest
       fonts-liberation
 
   # Make folders necessary to play nice with Discovery
-  mkdir -p /afs /inbox /ihome /opt /idata /dartfs-hpc/scratch/mind_hackathon
-  chmod a+rX /afs /inbox /ihome /opt /idata
+  mkdir -p /afs /inbox /ihome /opt /idata /dartfs-hpc/scratch/mind_hackathon /admin
+  chmod a+rX /afs /inbox /ihome /opt /idata /admin
   chmod a+rX -R /opt /dartfs-hpc
   
   # Install anaconda
